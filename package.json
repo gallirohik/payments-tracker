@@ -8,7 +8,8 @@
 		"start": "webpack-dev-server .",
 		"build": "webpack .",
 		"lint": "eslint . --fix --max-warnings=0",
-		"format": "prettier . --write"
+		"format": "prettier . --write",
+		"prepare": "husky install"
 	},
 	"repository": {
 		"type": "git",
@@ -36,6 +37,8 @@
 		"eslint-plugin-promise": "^6.1.1",
 		"eslint-plugin-react": "^7.31.11",
 		"html-webpack-plugin": "^5.5.0",
+		"husky": "^8.0.2",
+		"lint-staged": "^13.0.3",
 		"prettier": "2.8.0",
 		"typescript": "^4.9.3",
 		"webpack": "^5.75.0",
@@ -45,5 +48,9 @@
 	"dependencies": {
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0"
+	},
+	"lint-staged": {
+		"*.js": "eslint --cache --fix",
+		"*.--write": "prettier --write"
 	}
 }
